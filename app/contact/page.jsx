@@ -16,8 +16,8 @@ const Contactpage = () => {
       transition={{duration:1.5}}
     >
   
-        <div className="h-full w-full flex items-center justify-center">
-          <div className="flex w-1/2 h-1/2 gap-4 items-center justify-center">
+        <div className="h-full w-full overflow-auto flex flex-col md:flex-row items-center justify-center">
+          <div className="flex w-full md:w-1/2 h-1/2 gap-2 md:gap-4 items-center justify-center">
             {
               text.split("").map((letter,ind)=>{
                 return(
@@ -26,7 +26,7 @@ const Contactpage = () => {
                   animate={{opacity:0}}
                   initial={{opacity:1}}
                   transition={{repeat:Infinity,duration:3,delay:ind*0.1}}
-                  className="whitespace-pre text-5xl font-extrabold">
+                  className="text-2xl font-bold md:whitespace-pre md:text-5xl md:font-extrabold">
                     {letter}
                   </motion.span>
                 )
@@ -41,13 +41,15 @@ const Contactpage = () => {
               <Image src="/hiimg.png" alt="" height={55} width={55}></Image>
             </motion.div>
           </div>
-          <div className="border-2 w-1/2 h-3/4">
-            <form className='flex flex-col gap-4' action="">
-              <label htmlFor="msg">Hi Suresh Kumavat</label>
-              <textarea name="msg" id="" placeholder='Type your Message' className='focus:outline-none resize-none w-3/4 border-b-2' rows={7}></textarea>
-              <label htmlFor="email">Connect me here</label>
-              <input type="text" name='email' className='focus:outline-none overflow-auto w-3/4 border-b-2 cursor-pointer'/>
-              <button>Submit</button>
+          <div className="w-full md:w-1/2 h-3/4">
+            <form className='flex flex-col gap-7 justify-center items-center' action="">
+              <label className='md:text-2xl font-semibold' for="msg">Hi, Suresh Kumavat</label>
+              <textarea name="msg" id="" placeholder='Type your Message' className='bg-linear-to-t from-red-100 to-orange-100 p-2 focus:outline-none resize-none w-3/4 border-b-2' rows={7}></textarea>
+              <label className='md:text-2xl font-semibold' for="email">Connect me here</label>
+              <input type="text" placeholder='Your Email' name='email' className='bg-linear-to-t from-red-100 to-orange-200 p-2 focus:outline-none w-3/4 border-b-2 '/>
+              <div className="w-3/4 ">
+                <button className='cursor-pointer w-full text-center font-bold text-2xl border-2 border-orange-800 rounded-2xl bg-amber-400'>Submit</button>
+              </div>
             </form>
           </div>
             
