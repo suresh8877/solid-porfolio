@@ -3,8 +3,32 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Form from 'next/form'
+import { useRef ,useState} from 'react'
+import emailjs from '@emailjs/browser'
 
 const Contactpage = () => {
+  const [success, setsuccess] = useState(false)
+
+  const form = useRef();
+  const sendEmail = (e) => {
+      e.preventDefault();
+
+      emailjs
+        .sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
+        .then(
+          () => {
+            console.log('SUCCESS!');
+            setsuccess(true)
+            form.current.reset()
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+    };
+
+
+
   const text="SAY HELLO"
   const textarr=text.split("")
 
@@ -42,14 +66,18 @@ const Contactpage = () => {
             </motion.div>
           </div>
           <div className="w-full md:w-1/2 h-3/4">
-            <form className='flex flex-col gap-7 justify-center items-center' action="">
+            <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-7 justify-center items-center' action="">
               <label className='md:text-2xl font-semibold' for="msg">Hi, Suresh Kumavat</label>
-              <textarea name="msg" id="" placeholder='Type your Message' className='bg-linear-to-t from-red-100 to-orange-100 p-2 focus:outline-none resize-none w-3/4 border-b-2' rows={7}></textarea>
-              <label className='md:text-2xl font-semibold' for="email">Connect me here</label>
-              <input type="text" placeholder='Your Email' name='email' className='bg-linear-to-t from-red-100 to-orange-200 p-2 focus:outline-none w-3/4 border-b-2 '/>
+              <textarea name="user_message" id="" placeholder='Type your Message' className='bg-linear-to-t from-red-100 to-orange-100 p-2 focus:outline-none resize-none w-3/4 border-b-2' rows={7}></textarea>
+              
+              <label className='md:text-2xl font-semibold' for="user_email">Connect me here</label>
+              
+              <input type="text" placeholder='Your Email' name='user_email' className='bg-linear-to-t from-red-100 to-orange-200 p-2 focus:outline-none w-3/4 border-b-2 '/>
+              
               <div className="w-3/4 ">
                 <button className='cursor-pointer w-full text-center font-bold text-2xl border-2 border-orange-800 rounded-2xl bg-amber-400'>Submit</button>
               </div>
+              {success && <div>SUCCESFULLY SUBMITTED, THANK YOU!</div>}
             </form>
           </div>
             
