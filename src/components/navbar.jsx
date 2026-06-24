@@ -77,11 +77,21 @@ const Navbar= () =>{
             </div>
             <div className="w-1/3 hidden md:block">
                 <div className="flex gap-4 justify-center">
-                    <Image src="../github.svg" alt="" width={30} height={30}></Image>
-                    <Image src="../linkendin.svg" alt="" width={30} height={30}></Image>
-                    <Image src="../facebook.svg" alt="" width={30} height={30}></Image>
-                    <Image src="../instagram.svg" alt="" width={30} height={30}></Image>
-                    <Image src="../youtube.svg" alt="" width={30} height={30}></Image>
+                    <Link href="https://github.com/suresh8877" target="_blank" rel="noopener noreferrer">
+                        <Image src="../github.svg" alt="" width={30} height={30}></Image>
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/sureshkumavat7788/" target="_blank" rel="noopener noreferrer">
+                        <Image src="../linkendin.svg" alt="" width={30} height={30}></Image>
+                    </Link>
+                    <Link href="https://www.facebook.com/suresh.kumavat.35" target="_blank" rel="noopener noreferrer">
+                        <Image src="../facebook.svg" alt="" width={30} height={30}></Image>
+                    </Link>
+                    <Link href="https://www.instagram.com/sureshkrizz?utm_source=qr&igsh=MW5zNGt2bTh2cnhwdQ%3D%3D" target="_blank" rel="noopener noreferrer">
+                        <Image src="../instagram.svg" alt="" width={30} height={30}></Image>
+                    </Link>
+                    <Link href="https://youtube.com/@gamekrecordk?si=VnL4wIIKhCWOFnW1" target="_blank" rel="noopener noreferrer">
+                        <Image src="../youtube.svg" alt="" width={30} height={30}></Image>
+                    </Link>
                 </div>
             </div>
             {open &&
