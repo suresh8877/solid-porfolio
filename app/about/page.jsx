@@ -43,7 +43,7 @@ const Aboutpage = () => {
                     x="70"
                     y="135"
                     fontFamily="Pacifico, Brush Script MT, cursive"
-                    fontSize="52"
+                    fontSize="40"
                     fill="#000"
                   >
                     Suresh Kumavat

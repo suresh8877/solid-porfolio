@@ -9,7 +9,7 @@ const Transitionpages = ({children}) => {
     const pathName=usePathname()
   return (
     <AnimatePresence mode="wait"> 
-        <div key={pathName} className="w-screen h-screen bg-linear-to-b from-blue-200 to-pink-200 ">
+        <div key={pathName} className="w-screen h-screen bg-linear-to-b from-blue-200 to-pink-200 md::h-auto md:w-auto">
             <motion.div
                 className="w-screen h-screen fixed bg-black rounded-b-[100px] z-40"
                 animate={{height:"0vh"}}
