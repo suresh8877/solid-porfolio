@@ -14,14 +14,14 @@ const Homepage = () => {
       transition={{duration:1.5}}
     >
 
-    <div className="h-full flex flex-col md:flex-row md:items-center ">
+    <div className="h-[calc(100vh-4rem)] w-screen flex flex-col md:flex-row md:items-center overflow-auto">
       {/* h-[calc(100vh-4rem)] */}
       <div className="h-3/5 md:w-3/5 md:h-full relative overflow-hidden">
         <Image src="/suresh.png" alt="" fill className="object-contain scale-110 md:scale-115" ></Image>
       </div>
       
       <div className="h-2/5 md:w-2/5 flex flex-col gap-1 md:gap-4 p-2">
-        <h1 className="font-bold text-4xl md:text-4xl">Design|Develop|Deliver.
+        <h1 className="font-bold text-center text-3xl md:text-4xl">Design|Develop|Deliver.
           Technology Solutions That Scales High & BIG</h1>
         <p className="text-[15px] md:text-2xl">
           Crafting purposeful, precision-driven solutions with strong engineering foundations. I build modern, scalable systems where every feature has intent, using efficient architecture and current technologies to ensure performance, adaptability, and clean execution. The result is focused, reliable, and production-ready software..</p>

@@ -17,7 +17,7 @@ const Aboutpage = () => {
       transition={{duration:1.5}}
     >
       <div className="h-full flex hide-scrollbar overflow-y-auto " ref={containerRef}>
-       <div className='flex flex-col  gap-10 p-5 md:p-20 md:w-[55%]'>
+       <div className='flex flex-col w-[100vw] gap-10 p-5 md:p-20 md:w-[55%]'>
           <div className='flex flex-col gap-2 '>
               <h1 className='font-bold text-2xl'>Bibliography</h1>
               <p>

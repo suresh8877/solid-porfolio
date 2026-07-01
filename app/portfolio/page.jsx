@@ -78,12 +78,12 @@ const Portfoliopage = () => {
         <div className="w-screen h-[calc(100vh-4rem)] text-7xl justify-center flex items-center">My WORKS</div>
         <div className="sticky top-0 bg-amber-600 flex h-screen overflow-hidden">
               <motion.div style={{x}} className="flex">
-                <div className=" w-[100vw] h-screen bg-linear-to-r from-purple-400 to-red-400"></div>
+                <div className="w-[100vw] md:h-screen bg-linear-to-r from-purple-400 to-red-400"></div>
               {
                 workitems.map((item)=>{
                   return( 
-                    <div key={item.title} className={`md:w-screen md:h-screen flex items-center justify-center bg-linear-to-r ${item.color}`}>
-                      <Imagepanel item={item}/>
+                    <div key={item.title} className={`w-[100vw] md:w-screen md:h-screen flex items-center justify-center bg-linear-to-r ${item.color}`}>
+                      <Imagepanel className={`w-[100vw] md:w-screen md:h-screen`} item={item}/>
                     </div>
                   )
                 })
